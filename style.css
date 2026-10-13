@@ -1,0 +1,911 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+:root {
+    --azul: #4169E1;
+    --rosa: #B77B88;
+    --musgo: #556B2F;
+
+    --escuro: #11161A;
+    --creme: #F6F3EF;
+    --branco: #FFFFFF;
+    --cinza: #707070;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--creme);
+    color: var(--escuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ==============================
+   MENU
+============================== */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: rgba(17, 22, 26, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--branco);
+    letter-spacing: 3px;
+}
+
+.menu {
+    list-style: none;
+
+    display: flex;
+    gap: 28px;
+}
+
+.menu a {
+    color: var(--branco);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--rosa);
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 30px 80px;
+
+    background:
+        linear-gradient(
+            rgba(17, 22, 26, 0.65),
+            rgba(17, 22, 26, 0.75)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: var(--branco);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-small {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #e6d4d8;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: 0.9;
+    letter-spacing: 8px;
+}
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(25px, 4vw, 48px);
+    font-weight: 500;
+
+    margin: 25px 0;
+}
+
+.hero p:not(.hero-small) {
+    max-width: 650px;
+    margin: auto auto 35px;
+
+    font-size: 16px;
+}
+
+
+/* ==============================
+   BOTÕES
+============================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border: 1px solid var(--rosa);
+    background: var(--rosa);
+    color: var(--branco);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--branco);
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   SEÇÕES
+============================== */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title > p:first-child {
+    color: var(--musgo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 600;
+}
+
+.section-description {
+    color: var(--cinza);
+    max-width: 650px;
+    margin: 15px auto 0;
+}
+
+
+/* ==============================
+   EXPERIÊNCIAS
+============================== */
+
+.experience-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.experience-card {
+    min-height: 350px;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.experience-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,0.8)
+    );
+}
+
+.experience-card > div {
+    position: relative;
+    z-index: 1;
+}
+
+.experience-card span {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.experience-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.experience-card p {
+    font-size: 12px;
+}
+
+.card-amazonia {
+    background-image: url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-andes {
+    background-image: url("https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-deserto {
+    background-image: url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=900&q=80");
+}
+
+.card-polar {
+    background-image: url("https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=900&q=80");
+}
+
+
+/* ==============================
+   EXPEDIÇÕES
+============================== */
+
+.expeditions {
+    background: var(--branco);
+    max-width: none;
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.expedition-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.expedition-card {
+    background: var(--creme);
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.expedition-card:hover {
+    transform: translateY(-7px);
+}
+
+.expedition-image {
+    height: 250px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.amazon {
+    background-image: url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80");
+}
+
+.mountains {
+    background-image: url("https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=80");
+}
+
+.desert {
+    background-image: url("https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1000&q=80");
+}
+
+.ice {
+    background-image: url("https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1000&q=80");
+}
+
+.volcano {
+    background-image: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=80");
+}
+
+.cave {
+    background-image: url("https://images.unsplash.com/photo-1520637836862-4d197d17c26a?auto=format&fit=crop&w=1000&q=80");
+}
+
+.expedition-info {
+    padding: 25px;
+}
+
+.expedition-info span {
+    color: var(--musgo);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.expedition-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.expedition-info p {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.expedition-info strong {
+    display: block;
+    color: var(--rosa);
+    font-size: 21px;
+}
+
+.expedition-info small {
+    color: var(--cinza);
+}
+
+
+/* ==============================
+   DIFERENCIAIS
+============================== */
+
+.differences {
+    background: var(--musgo);
+    color: white;
+    max-width: none;
+}
+
+.differences .section-title > p:first-child {
+    color: #d7c1c6;
+}
+
+.difference-grid {
+    max-width: 1140px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.difference {
+    padding: 35px;
+
+    border-right: 1px solid rgba(255,255,255,0.25);
+}
+
+.difference:last-child {
+    border-right: none;
+}
+
+.difference span {
+    color: #d7c1c6;
+    font-size: 13px;
+}
+
+.difference h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.difference p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+}
+
+
+/* ==============================
+   TREINAMENTOS
+============================== */
+
+.training {
+    background: var(--creme);
+}
+
+.training-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.training-card {
+    background: var(--branco);
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-top: 4px solid var(--azul);
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.training-card:hover {
+    transform: translateY(-5px);
+}
+
+.training-card span {
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+.training-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.training-card p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.training-card strong {
+    display: block;
+    color: var(--rosa);
+    margin-top: 12px;
+    font-size: 19px;
+}
+
+.training-card.featured {
+    border-top-color: var(--rosa);
+    transform: translateY(-10px);
+}
+
+.training-card.featured small {
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--musgo);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.full-package {
+    margin-top: 40px;
+
+    text-align: center;
+
+    background: var(--escuro);
+    color: white;
+
+    padding: 35px;
+}
+
+.full-package p {
+    color: #d7c1c6;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.full-package h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+}
+
+.full-package strong {
+    color: var(--rosa);
+    font-size: 24px;
+}
+
+
+/* ==============================
+   EQUIPE
+============================== */
+
+.team {
+    background: var(--branco);
+    max-width: none;
+
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul);
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+}
+
+.team-card:nth-child(2) .team-photo {
+    background: var(--rosa);
+}
+
+.team-card:nth-child(3) .team-photo {
+    background: var(--musgo);
+}
+
+.team-card:nth-child(4) .team-photo {
+    background: var(--escuro);
+}
+
+.team-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.team-card p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+
+/* ==============================
+   CONTATO
+============================== */
+
+.contact {
+    background: var(--azul);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 100px 30px;
+}
+
+.contact-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact-content > p:first-child {
+    color: #e6d4d8;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.contact-content > p:nth-of-type(2) {
+    margin-bottom: 30px;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.footer {
+    background: var(--escuro);
+    color: white;
+}
+
+.footer-content {
+    max-width: 1140px;
+    margin: auto;
+
+    padding: 70px 30px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-brand h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+.footer-brand p {
+    color: #aeb3b6;
+    font-size: 13px;
+    max-width: 300px;
+}
+
+.footer h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-links,
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a,
+.footer-info button {
+    color: #aeb3b6;
+    font-size: 12px;
+
+    background: none;
+    border: none;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+.footer-links a:hover,
+.footer-info button:hover {
+    color: var(--rosa);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding: 20px 30px;
+
+    text-align: center;
+
+    color: #858b8f;
+    font-size: 11px;
+}
+
+
+/* ==============================
+   MODAL
+============================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 600px;
+    width: 100%;
+
+    background: var(--branco);
+
+    padding: 40px;
+
+    position: relative;
+}
+
+.modal-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: var(--cinza);
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    border: none;
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   MENSAGEM
+============================== */
+
+#contactMessage {
+    margin-top: 20px;
+
+    font-weight: 600;
+    color: #f2dce1;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+
+    .menu {
+        position: absolute;
+
+        top: 75px;
+        right: 20px;
+
+        width: 230px;
+
+        padding: 20px;
+
+        background: var(--escuro);
+
+        display: none;
+
+        flex-direction: column;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .expedition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .difference-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .difference {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 17px 20px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .hero {
+        background-attachment: scroll;
+    }
+
+    .experience-grid,
+    .expedition-grid,
+    .difference-grid,
+    .training-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .difference {
+        border-right: none;
+    }
+
+    .training-card.featured {
+        transform: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+}
